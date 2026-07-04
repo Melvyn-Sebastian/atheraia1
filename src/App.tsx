@@ -293,7 +293,7 @@ export default function App() {
       {/* VIEW ENGINE */}
       {!session.isSynchronized ? (
         // Login/Intro screen
-        <EnterState onSynchronize={handleSynchronize} isLoading={isWhispering} />
+        <EnterState onSynchronize={handleSynchronize} isLoading={isWhispering} errorMsg={errorMsg} />
       ) : (
         // Main Application Workspace
         <div className="flex h-screen w-screen relative overflow-hidden" id="app-workspace">

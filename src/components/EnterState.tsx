@@ -9,9 +9,10 @@ import { User, Hash, ArrowRight, HelpCircle, Infinity as InfinityIcon } from 'lu
 interface EnterStateProps {
   onSynchronize: (userName: string, frequency: string) => void;
   isLoading: boolean;
+  errorMsg?: string | null;
 }
 
-export default function EnterState({ onSynchronize, isLoading }: EnterStateProps) {
+export default function EnterState({ onSynchronize, isLoading, errorMsg }: EnterStateProps) {
   const [userName, setUserName] = useState('');
   const [frequency, setFrequency] = useState('');
   const [showHelp, setShowHelp] = useState(false);
@@ -43,6 +44,12 @@ export default function EnterState({ onSynchronize, isLoading }: EnterStateProps
         <p className="font-sans text-sm md:text-base text-purple-950/70 text-center mb-8">
           Synchronize your consciousness to begin co-dreaming.
         </p>
+
+        {errorMsg && (
+          <div className="w-full mb-6 p-4 bg-red-500/10 border border-red-500/20 rounded-2xl text-xs text-red-800 font-semibold text-center shadow-sm">
+            {errorMsg}
+          </div>
+        )}
 
         {/* Form */}
         <form onSubmit={handleSubmit} className="w-full space-y-6">
