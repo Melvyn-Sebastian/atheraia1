@@ -542,6 +542,11 @@ You must return a strictly valid JSON response containing these fields exactly. 
 
 // Serve frontend assets & mount Vite dev server in development
 async function startServer() {
+  if (process.env.VERCEL) {
+    console.log("[Aetheria Server] Running on Vercel Serverless. Directing API traffic.");
+    return;
+  }
+
   if (process.env.NODE_ENV !== "production") {
     console.log("[Aetheria Server] Running in Development Mode. Initializing Vite...");
     const vite = await createViteServer({
@@ -564,3 +569,5 @@ async function startServer() {
 }
 
 startServer();
+
+export default app;
