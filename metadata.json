@@ -1,0 +1,6 @@
+{
+  "name": "Aetheria",
+  "description": "A collaborative, real-time dream synthesis and node-tree workspace powered by Digital Etherealism.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
